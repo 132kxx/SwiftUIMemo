@@ -39,5 +39,4 @@ class MemoStore: ObservableObject {
             list.remove(at: index)
         }
     }
-    }
 }
