@@ -10,9 +10,12 @@ import SwiftUI
 struct DetailView: View {
     
     @State private var showComposer = false
+    @State private var showDeleteAlert = false
+
     
     @ObservedObject var memo: Memo
     
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var store: MemoStore
     
     var body: some View {
@@ -35,6 +38,25 @@ struct DetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
+                Button {
+                    showDeleteAlert = true
+                } label: {
+                    Image(systemName: "trash")
+                }
+                .foregroundColor(.red)
+                .alert("확인", isPresented: $showDeleteAlert) {
+                    Button(role: .destructive) {
+                        store.delete(memo: memo)
+                            dismiss()
+                    } label: {
+                        Text("delete")
+                    }
+
+                } message: {
+                    Text("delete?")
+                }
+
+
                 Button {
                     showComposer = true
                 } label: {
