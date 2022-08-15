@@ -10,11 +10,11 @@
 		B46CB7BC288044240053EB35 /* SwiftUIMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB7BB288044240053EB35 /* SwiftUIMemoApp.swift */; };
 		B46CB7C0288044240053EB35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B46CB7BF288044240053EB35 /* Assets.xcassets */; };
 		B46CB7C3288044240053EB35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B46CB7C2288044240053EB35 /* Preview Assets.xcassets */; };
-		B46CB7C5288044240053EB35 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB7C4288044240053EB35 /* Persistence.swift */; };
 		B46CB7C8288044240053EB35 /* SwiftUIMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B46CB7C6288044240053EB35 /* SwiftUIMemo.xcdatamodeld */; };
 		B46CB7CF2880446C0053EB35 /* MainListVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB7CE2880446C0053EB35 /* MainListVIew.swift */; };
 		B46CB7D3288044EC0053EB35 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB7D2288044EC0053EB35 /* Memo.swift */; };
 		B46CB7D5288045820053EB35 /* MemoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB7D4288045820053EB35 /* MemoStore.swift */; };
+		B4A264AF28AA732000FAE886 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A264AE28AA732000FAE886 /* CoreDataManager.swift */; };
 		B4D5072628AA0AFB00F52AEA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5072528AA0AFB00F52AEA /* DetailView.swift */; };
 		B4EA08DC28A7FF97004D28A0 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA08DB28A7FF97004D28A0 /* MemoCell.swift */; };
 		B4EA08DF28A7FFFE004D28A0 /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA08DE28A7FFFE004D28A0 /* ComposeView.swift */; };
@@ -25,11 +25,11 @@
 		B46CB7BB288044240053EB35 /* SwiftUIMemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMemoApp.swift; sourceTree = "<group>"; };
 		B46CB7BF288044240053EB35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B46CB7C2288044240053EB35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B46CB7C4288044240053EB35 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B46CB7C7288044240053EB35 /* SwiftUIMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftUIMemo.xcdatamodel; sourceTree = "<group>"; };
 		B46CB7CE2880446C0053EB35 /* MainListVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListVIew.swift; sourceTree = "<group>"; };
 		B46CB7D2288044EC0053EB35 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		B46CB7D4288045820053EB35 /* MemoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStore.swift; sourceTree = "<group>"; };
+		B4A264AE28AA732000FAE886 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B4D5072528AA0AFB00F52AEA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		B4EA08DB28A7FF97004D28A0 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		B4EA08DE28A7FFFE004D28A0 /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
@@ -86,8 +86,8 @@
 		B46CB7D0288044880053EB35 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				B46CB7C4288044240053EB35 /* Persistence.swift */,
 				B46CB7C6288044240053EB35 /* SwiftUIMemo.xcdatamodeld */,
+				B4A264AE28AA732000FAE886 /* CoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -184,12 +184,12 @@
 			files = (
 				B4EA08DC28A7FF97004D28A0 /* MemoCell.swift in Sources */,
 				B4D5072628AA0AFB00F52AEA /* DetailView.swift in Sources */,
-				B46CB7C5288044240053EB35 /* Persistence.swift in Sources */,
 				B46CB7D5288045820053EB35 /* MemoStore.swift in Sources */,
 				B46CB7CF2880446C0053EB35 /* MainListVIew.swift in Sources */,
 				B46CB7C8288044240053EB35 /* SwiftUIMemo.xcdatamodeld in Sources */,
 				B4EA08DF28A7FFFE004D28A0 /* ComposeView.swift in Sources */,
 				B46CB7BC288044240053EB35 /* SwiftUIMemoApp.swift in Sources */,
+				B4A264AF28AA732000FAE886 /* CoreDataManager.swift in Sources */,
 				B46CB7D3288044EC0053EB35 /* Memo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
