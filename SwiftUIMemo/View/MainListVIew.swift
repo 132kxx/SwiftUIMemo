@@ -73,6 +73,10 @@ struct MainListVIew: View {
                         ]
                 }
             }
+            
+            VStack {
+                Text("second view")
+            }
         }
         
     }
