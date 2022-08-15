@@ -10,6 +10,8 @@ import SwiftUI
 struct MainListVIew: View {
     @EnvironmentObject var store: MemoStore
     
+    @State private var showCompeser: Bool = false
+    
     var body: some View {
         NavigationView {
             List(store.list) { memo in
@@ -17,6 +19,17 @@ struct MainListVIew: View {
             }
             .listStyle(.plain)
             .navigationTitle("My Memo")
+            .toolbar {
+                Button {
+                    showCompeser = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+
+            }
+            .sheet(isPresented: $showCompeser) {
+                ComposeView()
+            }
         }
         
     }
