@@ -13,21 +13,21 @@ struct DetailView: View {
     @State private var showDeleteAlert = false
 
     
-    @ObservedObject var memo: Memo
+    @ObservedObject var memo: MemoEntity
     
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var store: MemoStore
+    @EnvironmentObject var manager: CoreDataManager
     
     var body: some View {
         VStack {
             ScrollView{
                 VStack {
                     HStack {
-                        Text(memo.content)
+                        Text(memo.content ?? "")
                             .padding()
                         Spacer(minLength: 0)
                     }
-                    Text(memo.insertDate, style:.date)
+                    Text(memo.insertDate ?? .now, style:.date)
                         .padding()
                         .font(.footnote)
                         .foregroundColor(.secondary)
@@ -46,7 +46,7 @@ struct DetailView: View {
                 .foregroundColor(.red)
                 .alert("확인", isPresented: $showDeleteAlert) {
                     Button(role: .destructive) {
-                        store.delete(memo: memo)
+                        manager.delete(memo: memo)
                             dismiss()
                     } label: {
                         Text("delete")
@@ -74,8 +74,8 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            DetailView(memo: Memo(content: "hello"))
-                .environmentObject(MemoStore())
+            DetailView(memo: MemoEntity(context: CoreDataManager.shared.mainContext))
+                .environmentObject(CoreDataManager.shared)
         }
     }
 }
