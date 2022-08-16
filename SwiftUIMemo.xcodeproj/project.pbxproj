@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4622B4328ABDE65004E0EF0 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4622B4228ABDE65004E0EF0 /* NavigationState.swift */; };
 		B46CB7BC288044240053EB35 /* SwiftUIMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46CB7BB288044240053EB35 /* SwiftUIMemoApp.swift */; };
 		B46CB7C0288044240053EB35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B46CB7BF288044240053EB35 /* Assets.xcassets */; };
 		B46CB7C3288044240053EB35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B46CB7C2288044240053EB35 /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4622B4228ABDE65004E0EF0 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
 		B46CB7B8288044240053EB35 /* SwiftUIMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B46CB7BB288044240053EB35 /* SwiftUIMemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMemoApp.swift; sourceTree = "<group>"; };
 		B46CB7BF288044240053EB35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				B46CB7D0288044880053EB35 /* CoreData */,
 				B46CB7BB288044240053EB35 /* SwiftUIMemoApp.swift */,
 				B46CB7BF288044240053EB35 /* Assets.xcassets */,
+				B4622B4228ABDE65004E0EF0 /* NavigationState.swift */,
 				B46CB7C1288044240053EB35 /* Preview Content */,
 			);
 			path = SwiftUIMemo;
@@ -191,6 +194,7 @@
 				B46CB7BC288044240053EB35 /* SwiftUIMemoApp.swift in Sources */,
 				B4A264AF28AA732000FAE886 /* CoreDataManager.swift in Sources */,
 				B46CB7D3288044EC0053EB35 /* Memo.swift in Sources */,
+				B4622B4328ABDE65004E0EF0 /* NavigationState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

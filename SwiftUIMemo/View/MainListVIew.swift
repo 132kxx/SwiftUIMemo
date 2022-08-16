@@ -9,8 +9,9 @@ import SwiftUI
 
 struct MainListVIew: View {
     @EnvironmentObject var manager: CoreDataManager
+    @EnvironmentObject var navigationState: NavigationState
     
-    @State private var showCompeser: Bool = false
+    @State private var showComposer: Bool = false
     
     @State private var keyword = ""
     
@@ -36,7 +37,7 @@ struct MainListVIew: View {
             .toolbar {
                 HStack {
                     Button {
-                        showCompeser = true
+                        showComposer = true
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -50,7 +51,7 @@ struct MainListVIew: View {
                 }
 
             }
-            .sheet(isPresented: $showCompeser) {
+            .sheet(isPresented: $showComposer) {
                 ComposeView()
         }
             .searchable(text: $keyword, prompt: "내용을 검색합니다")
@@ -75,9 +76,23 @@ struct MainListVIew: View {
             }
             
             VStack {
-                Text("second view")
+                Text("내 메모를 탭한 다음 메모를 선택하거나 \n 새 메모를 추가할 수 있어요")
+                    .multilineTextAlignment(.center)
+                    .font(.title3)
+                
+                Button {
+                    showComposer = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+                        .padding()
+                        .buttonStyle(.borderedProminent)
+
             }
         }
+        #if os(iOS)
+        .id(navigationState.listId)
+        #endif
         
     }
     
@@ -94,5 +109,6 @@ struct MainListVIew_Previews: PreviewProvider {
         MainListVIew()
             .environmentObject(CoreDataManager.shared)
             .environment(\.managedObjectContext, CoreDataManager.shared.mainContext)
+            .environmentObject(NavigationState())
     }
 }

@@ -17,6 +17,16 @@ struct DetailView: View {
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var manager: CoreDataManager
+    @EnvironmentObject var navigationState: NavigationState
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    var placement: ToolbarItemPlacement {
+        if horizontalSizeClass == .regular {
+            return .primaryAction
+        } else {
+            return .bottomBar
+        }
+    }
     
     var body: some View {
         VStack {
@@ -37,7 +47,7 @@ struct DetailView: View {
         .navigationTitle("메모보기")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItemGroup(placement: .bottomBar) {
+            ToolbarItemGroup(placement: placement) {
                 Button {
                     showDeleteAlert = true
                 } label: {
@@ -47,7 +57,13 @@ struct DetailView: View {
                 .alert("확인", isPresented: $showDeleteAlert) {
                     Button(role: .destructive) {
                         manager.delete(memo: memo)
+                        
+                        if horizontalSizeClass == .regular {
+                            navigationState.listId = UUID()
+                        } else {
                             dismiss()
+                        }
+                        
                     } label: {
                         Text("delete")
                     }
